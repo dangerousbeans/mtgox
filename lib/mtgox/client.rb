@@ -44,6 +44,7 @@ module MtGox
       Ticker.instance.sell   = ticker['data']['sell']['value'].to_f
       Ticker.instance.volume = ticker['data']['vol']['value'].to_f
       Ticker.instance.vwap   = ticker['data']['vwap']['value'].to_f
+      Ticker.instance.now    = ticker['data']['now'].to_i
       Ticker.instance
     end
 

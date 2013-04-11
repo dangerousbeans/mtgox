@@ -38,6 +38,7 @@ describe MtGox::Client do
       ticker.high.should == 266.00000
       ticker.low.should  == 105.00000
       ticker.vwap.should == 172.65643
+      ticker.now.should == 1365681277407141 # Timestamp
     end
   end
 
