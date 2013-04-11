@@ -35,14 +35,15 @@ module MtGox
     # @example
     #   MtGox.ticker
     def ticker
-      ticker = get('/api/0/data/ticker.php')['ticker']
-      Ticker.instance.buy    = ticker['buy'].to_f
-      Ticker.instance.high   = ticker['high'].to_f
-      Ticker.instance.price  = ticker['last'].to_f
-      Ticker.instance.low    = ticker['low'].to_f
-      Ticker.instance.sell   = ticker['sell'].to_f
-      Ticker.instance.volume = ticker['vol'].to_f
-      Ticker.instance.vwap   = ticker['vwap'].to_f
+      ticker = get('/api/2/BTCUSD/money/ticker')
+
+      Ticker.instance.buy    = ticker['data']['buy']['value'].to_f
+      Ticker.instance.high   = ticker['data']['high']['value'].to_f
+      Ticker.instance.price  = ticker['data']['last']['value'].to_f
+      Ticker.instance.low    = ticker['data']['low']['value'].to_f
+      Ticker.instance.sell   = ticker['data']['sell']['value'].to_f
+      Ticker.instance.volume = ticker['data']['vol']['value'].to_f
+      Ticker.instance.vwap   = ticker['data']['vwap']['value'].to_f
       Ticker.instance
     end
 

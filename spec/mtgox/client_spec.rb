@@ -25,21 +25,19 @@ describe MtGox::Client do
 
   describe '#ticker' do
     before do
-      stub_get('/api/0/data/ticker.php').
+      stub_get('/api/2/BTCUSD/money/ticker').
         to_return(status: 200, body: fixture('ticker.json'))
     end
 
     it "should fetch the ticker" do
       ticker = @client.ticker
-      a_get('/api/0/data/ticker.php').
+      a_get('/api/2/BTCUSD/money/ticker').
         should have_been_made
-      ticker.buy.should  == 26.4
-      ticker.sell.should == 26.6099
-      ticker.high.should == 28.678
-      ticker.low.should  == 18.4
-      ticker.price.should == 26.5
-      ticker.volume.should  == 80531.0
-      ticker.vwap.should == 3.81561
+      ticker.buy.should  == 162.20000
+      ticker.sell.should == 164.98000
+      ticker.high.should == 266.00000
+      ticker.low.should  == 105.00000
+      ticker.vwap.should == 172.65643
     end
   end
 
