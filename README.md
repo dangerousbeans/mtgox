@@ -1,11 +1,5 @@
 # Ruby wrapper for the Mt. Gox Trade API
 
-[![Gem Version](https://badge.fury.io/rb/mtgox.png)][gem]
-[![Build Status](https://secure.travis-ci.org/sferik/mtgox.png?branch=master)][travis]
-[![Dependency Status](https://gemnasium.com/sferik/mtgox.png?travis)][gemnasium]
-[![Code Climate](https://codeclimate.com/github/sferik/mtgox.png)][codeclimate]
-[![Coverage Status](https://coveralls.io/repos/sferik/mtgox/badge.png?branch=master)][coveralls]
-
 [gem]: https://rubygems.org/gems/mtgox
 [travis]: http://travis-ci.org/sferik/mtgox
 [gemnasium]: https://gemnasium.com/sferik/mtgox
@@ -17,16 +11,6 @@ US Dollars.
 
 ## Installation
     gem install mtgox
-
-To ensure the code you're installing hasn't been tampered with, it's
-recommended that you verify the signature. To do this, you need to add my
-public key as a trusted certificate (you only need to do this once):
-
-    gem cert --add <(curl -Ls https://gist.github.com/sferik/4701180/raw/public_cert.pem)
-
-Then, install the gem with the high security trust policy:
-
-    gem install mtgox -P HighSecurity
 
 ## Executable
 After installing the gem, you can get the current price for 1 BTC in USD by
